@@ -9,11 +9,11 @@ The goal is to evaluate **speed**, **memory efficiency**, and **allocation behav
 
 ## 🧪 Tested Libraries
 
-- [BigCache](https://github.com/allegro/bigcache)
-- [FreeCache](https://github.com/coocood/freecache)
-- [Ristretto](https://github.com/dgraph-io/ristretto)
-- [Theine](https://github.com/yujunz/theine-go)
-- [TTLCache](https://github.com/jellydator/ttlcache)
+- BigCache
+- FreeCache
+- Ristretto
+- Theine
+- TTLCache
 
 ## ⚙️ Environment
 
@@ -28,20 +28,29 @@ pkg: github.com/memcache/benchmark
 
 | Library       | Operation | ns/op | B/op | allocs/op |
 |----------------|------------|-------|------|------------|
-| **BigCache**   | Set        | 329.5 | 32   | 2 |
-|                | Get        | 356.5 | 199  | 5 |
-| **FreeCache**  | Set        | 235.2 | 32   | 2 |
-|                | Get        | 361.5 | 192  | 4 |
-| **Ristretto**  | Set        | 428.6 | 113  | 3 |
-|                | Get        | 176.3 | 24   | 1 |
-| **Theine**     | Set        | 226.2 | 0    | 0 |
-|                | Get        | 176.2 | 16   | 1 |
-| **TTLCache**   | Set        | 486.5 | 1    | 0 |
-|                | Get        | 132.5 | 0    | 0 |
+| **BigCache**   | Get        | 93.47 | 23  | 2 |
+| **FreeCache**  | Set        | 71.20 | 0   | 0 |
+|                | Get        | 100.6 | 16  | 1 |
+| **Ristretto**  | Set        | 349.1 | 121 | 3 |
+|                | Get        | 141.4 | 23  | 1 |
+| **Theine**     | Set        | 168.0 | 0   | 0 |
+|                | Get        | 134.9 | 16  | 1 |
+| **TTLCache**   | Set        | 392.0 | 0   | 0 |
+|                | Get        | 100.1 | 0   | 0 |
 
-✅ **Fastest Get:** TTLCache (132.5 ns/op)  
-⚡ **Fastest Set:** Theine (226.2 ns/op)  
-💾 **Lowest Allocations:** Theine / TTLCache
+raw benchmark:
+
+```
+BenchmarkAllCaches/BigCache_Get-8               12522745                93.47 ns/op           23 B/op          2 allocs/op
+BenchmarkAllCaches/FreeCache_Set-8              16266094                71.20 ns/op            0 B/op          0 allocs/op
+BenchmarkAllCaches/FreeCache_Get-8              11706307               100.6 ns/op            16 B/op          1 allocs/op
+BenchmarkAllCaches/Ristretto_Set-8               2962323               349.1 ns/op           121 B/op          3 allocs/op
+BenchmarkAllCaches/Ristretto_Get-8               8604910               141.4 ns/op            23 B/op          1 allocs/op
+BenchmarkAllCaches/Theine_Set-8                  6353618               168.0 ns/op             0 B/op          0 allocs/op
+BenchmarkAllCaches/Theine_Get-8                  8893598               134.9 ns/op            16 B/op          1 allocs/op
+BenchmarkAllCaches/TTLCache_Set-8                3159577               392.0 ns/op             0 B/op          0 allocs/op
+BenchmarkAllCaches/TTLCache_Get-8               11683659               100.1 ns/op             0 B/op          0 allocs/op
+```
 
 ## 🧰 How to Run
 
@@ -74,4 +83,3 @@ go test -bench=BigCache -benchmem
 | Heavy concurrency, medium latency | **FreeCache** |
 | Cache with admission/eviction policies | **Ristretto** |
 | Simple key-value cache | **BigCache** |
-
