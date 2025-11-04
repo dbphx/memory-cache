@@ -10,6 +10,7 @@ const (
 	Ristretto CacheType = "ristretto"
 	Theine    CacheType = "theine"
 	TttlCache CacheType = "ttlcache"
+	FastCache CacheType = "fastcache"
 )
 
 type Cache interface {

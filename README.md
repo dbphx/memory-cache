@@ -27,16 +27,18 @@ pkg: github.com/memcache/benchmark
 ## 🚀 Benchmark Results
 
 | Library       | Operation | ns/op | B/op | allocs/op |
-|----------------|------------|-------|------|------------|
-| **BigCache**   | Get        | 93.47 | 23  | 2 |
-| **FreeCache**  | Set        | 71.20 | 0   | 0 |
-|                | Get        | 100.6 | 16  | 1 |
-| **Ristretto**  | Set        | 349.1 | 121 | 3 |
-|                | Get        | 141.4 | 23  | 1 |
-| **Theine**     | Set        | 168.0 | 0   | 0 |
-|                | Get        | 134.9 | 16  | 1 |
-| **TTLCache**   | Set        | 392.0 | 0   | 0 |
-|                | Get        | 100.1 | 0   | 0 |
+|---------------|------------|--|------|-----------|
+| **BigCache**  | Get        | 93.47 | 23   | 2         |
+| **FreeCache** | Set        | 71.20 | 0    | 0         |
+|               | Get        | 100.6 | 16   | 1         |
+| **Ristretto** | Set        | 349.1 | 121  | 3         |
+|               | Get        | 141.4 | 23   | 1         |
+| **Theine**    | Set        | 168.0 | 0    | 0         |
+|               | Get        | 134.9 | 16   | 1         |
+| **TTLCache**  | Set        | 392.0 | 0    | 0         |
+|               | Get        | 100.1 | 0    | 0         |
+| **FastCache** | Set        | 59.55 | 0    | 0         |
+|               | Get        | 100.8 | 16   | 1         |
 
 raw benchmark:
 
@@ -77,9 +79,9 @@ go test -bench=BigCache -benchmem
 ## 🧭 Conclusion
 
 | Use Case | Recommended Library |
-|-----------|--------------------|
-| Ultra-low latency reads | **TTLCache** |
-| Balanced performance | **Theine** |
-| Heavy concurrency, medium latency | **FreeCache** |
-| Cache with admission/eviction policies | **Ristretto** |
-| Simple key-value cache | **BigCache** |
+|-----------|---------------------|
+| Ultra-low latency reads | **TTLCache**        |
+| Balanced performance | **FastCache**       |
+| Heavy concurrency, medium latency | **FreeCache**       |
+| Cache with admission/eviction policies | **Ristretto**       |
+| Simple key-value cache | **BigCache**        |

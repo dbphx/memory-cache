@@ -16,6 +16,8 @@ func NewCache(t CacheType) (Cache, error) {
 		return NewTheineCache(1_000_000)
 	case TttlCache:
 		return NewTTLCache()
+	case FastCache:
+		return NewFastCacheWrapper(1_000_000)
 	default:
 		return nil, fmt.Errorf("unknown cache type: %v", t)
 	}
