@@ -2,6 +2,8 @@ package memory
 
 import (
 	"fmt"
+	"io"
+	"log"
 	"testing"
 	"time"
 
@@ -12,6 +14,10 @@ const (
 	testTTL  = 10 * time.Second
 	testSize = 10_000
 )
+
+func init() {
+	log.SetOutput(io.Discard)
+}
 
 func generateKeys(n int) []string {
 	keys := make([]string, n)

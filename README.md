@@ -29,24 +29,26 @@ pkg: github.com/memcache/benchmark
 ## 🚀 Benchmark Results
 
 | Library       | Operation | ns/op | B/op | allocs/op |
-|---------------|------------|--|------|-----------|
-| **BigCache**  | Get        | 93.47 | 23   | 2         |
-| **FreeCache** | Set        | 71.20 | 0    | 0         |
-|               | Get        | 100.6 | 16   | 1         |
-| **Ristretto** | Set        | 349.1 | 121  | 3         |
-|               | Get        | 141.4 | 23   | 1         |
-| **Theine**    | Set        | 168.0 | 0    | 0         |
-|               | Get        | 134.9 | 16   | 1         |
-| **TTLCache**  | Set        | 392.0 | 0    | 0         |
-|               | Get        | 100.1 | 0    | 0         |
-| **FastCache** | Set        | 59.55 | 0    | 0         |
-|               | Get        | 100.8 | 16   | 1         |
-| **GoCache**   | Set        | 131.7 | 24   | 1         |
-|               | Get        | 81.41 | 0    | 0         |
+|---------------|-----------|--|------|-----------|
+| **BigCache**  | Get       | 93.47 | 23   | 2         |
+|               | Set       | 208.1 | 1    | 0         |
+| **FreeCache** | Set       | 71.20 | 0    | 0         |
+|               | Get       | 100.6 | 16   | 1         |
+| **Ristretto** | Set       | 349.1 | 121  | 3         |
+|               | Get       | 141.4 | 23   | 1         |
+| **Theine**    | Set       | 168.0 | 0    | 0         |
+|               | Get       | 134.9 | 16   | 1         |
+| **TTLCache**  | Set       | 392.0 | 0    | 0         |
+|               | Get       | 100.1 | 0    | 0         |
+| **FastCache** | Set       | 59.55 | 0    | 0         |
+|               | Get       | 100.8 | 16   | 1         |
+| **GoCache**   | Set       | 131.7 | 24   | 1         |
+|               | Get       | 81.41 | 0    | 0         |
 
 raw benchmark:
 
 ```
+BenchmarkAllCaches/BigCache_Set-8                5033186               208.1 ns/op             1 B/op          0 allocs/op
 BenchmarkAllCaches/BigCache_Get-8               12522745                93.47 ns/op           23 B/op          2 allocs/op
 BenchmarkAllCaches/FreeCache_Set-8              16266094                71.20 ns/op            0 B/op          0 allocs/op
 BenchmarkAllCaches/FreeCache_Get-8              11706307               100.6 ns/op            16 B/op          1 allocs/op
