@@ -14,6 +14,8 @@ The goal is to evaluate **speed**, **memory efficiency**, and **allocation behav
 - Ristretto
 - Theine
 - TTLCache
+- FastCache
+- GoCache
 
 ## ⚙️ Environment
 
@@ -41,6 +43,7 @@ pkg: github.com/memcache/benchmark
 |               | Get        | 100.8 | 16   | 1         |
 | **GoCache**   | Set        | 131.7 | 24   | 1         |
 |               | Get        | 81.41 | 0    | 0         |
+
 raw benchmark:
 
 ```
