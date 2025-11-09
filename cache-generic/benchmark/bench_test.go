@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	cachelib "github.com/memcache/cache"
+	cachelib "github.com/memcache/cache-generic"
 )
 
 const (

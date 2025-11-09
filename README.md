@@ -39,7 +39,8 @@ pkg: github.com/memcache/benchmark
 |               | Get        | 100.1 | 0    | 0         |
 | **FastCache** | Set        | 59.55 | 0    | 0         |
 |               | Get        | 100.8 | 16   | 1         |
-
+| **GoCache**   | Set        | 131.7 | 24   | 1         |
+|               | Get        | 81.41 | 0    | 0         |
 raw benchmark:
 
 ```
@@ -52,6 +53,11 @@ BenchmarkAllCaches/Theine_Set-8                  6353618               168.0 ns/
 BenchmarkAllCaches/Theine_Get-8                  8893598               134.9 ns/op            16 B/op          1 allocs/op
 BenchmarkAllCaches/TTLCache_Set-8                3159577               392.0 ns/op             0 B/op          0 allocs/op
 BenchmarkAllCaches/TTLCache_Get-8               11683659               100.1 ns/op             0 B/op          0 allocs/op
+BenchmarkAllCaches/FastCache_Set-8              19292216                58.70 ns/op            0 B/op          0 allocs/op
+BenchmarkAllCaches/FastCache_Get-8              11788620               102.1 ns/op            16 B/op          1 allocs/op
+BenchmarkAllCaches/GoCache_Set-8                 8923922               131.7 ns/op            24 B/op          1 allocs/op
+BenchmarkAllCaches/GoCache_Get-8                15443277                81.41 ns/op            0 B/op          0 allocs/op
+
 ```
 
 ## 🧰 How to Run
