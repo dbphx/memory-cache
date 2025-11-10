@@ -30,8 +30,8 @@ pkg: github.com/memcache/benchmark
 
 | Library       | Operation | ns/op | B/op | allocs/op |
 |---------------|-----------|--|------|-----------|
-| **BigCache**  | Get       | 93.47 | 23   | 2         |
-|               | Set       | 208.1 | 1    | 0         |
+| **BigCache**  | Set       | 208.1 | 1    | 0         |
+|               | Get       | 93.47 | 23   | 2         |
 | **FreeCache** | Set       | 71.20 | 0    | 0         |
 |               | Get       | 100.6 | 16   | 1         |
 | **Ristretto** | Set       | 349.1 | 121  | 3         |
