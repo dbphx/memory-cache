@@ -29,7 +29,7 @@ pkg: github.com/memcache/benchmark
 ## 🚀 Benchmark Results
 
 | Library       | Operation | ns/op | B/op | allocs/op |
-|---------------|-----------|--|------|-----------|
+|---------------|-----------|-------|------|-----------|
 | **BigCache**  | Set       | 208.1 | 1    | 0         |
 |               | Get       | 93.47 | 23   | 2         |
 | **FreeCache** | Set       | 71.20 | 0    | 0         |
@@ -44,7 +44,8 @@ pkg: github.com/memcache/benchmark
 |               | Get       | 100.8 | 16   | 1         |
 | **GoCache**   | Set       | 131.7 | 24   | 1         |
 |               | Get       | 81.41 | 0    | 0         |
-
+| **ICache**    | Set       | 223.8 | 80   | 2         |
+|               | Get       | 132.6 | 40   | 2         |
 raw benchmark:
 
 ```
@@ -62,7 +63,8 @@ BenchmarkAllCaches/FastCache_Set-8              19292216                58.70 ns
 BenchmarkAllCaches/FastCache_Get-8              11788620               102.1 ns/op            16 B/op          1 allocs/op
 BenchmarkAllCaches/GoCache_Set-8                 8923922               131.7 ns/op            24 B/op          1 allocs/op
 BenchmarkAllCaches/GoCache_Get-8                15443277                81.41 ns/op            0 B/op          0 allocs/op
-
+BenchmarkAllCaches/Icache_Set-8                  5346549               223.8 ns/op            80 B/op          2 allocs/op
+BenchmarkAllCaches/Icache_Get-8                  9755575               132.6 ns/op            40 B/op          2 allocs/op
 ```
 
 ## 🧰 How to Run

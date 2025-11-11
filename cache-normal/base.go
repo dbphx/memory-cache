@@ -12,6 +12,7 @@ const (
 	TttlCache CacheType = "ttlcache"
 	FastCache CacheType = "fastcache"
 	GoCache   CacheType = "gocache"
+	ICache    CacheType = "icache"
 )
 
 type Cache interface {

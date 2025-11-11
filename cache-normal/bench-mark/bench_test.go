@@ -42,6 +42,7 @@ func BenchmarkAllCaches(b *testing.B) {
 		{"TTLCache", cachenormal.TttlCache},
 		{"FastCache", cachenormal.FastCache},
 		{"GoCache", cachenormal.GoCache},
+		{"Icache", cachenormal.ICache},
 	}
 
 	for _, tt := range tests {

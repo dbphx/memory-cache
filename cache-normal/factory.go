@@ -2,6 +2,7 @@ package memory
 
 import (
 	"fmt"
+	"time"
 )
 
 func NewCache(t CacheType) (Cache, error) {
@@ -20,6 +21,8 @@ func NewCache(t CacheType) (Cache, error) {
 		return NewFastCacheWrapper(1_000_000)
 	case GoCache:
 		return NewGoCache()
+	case ICache:
+		return NewICachePot(time.Minute)
 	default:
 		return nil, fmt.Errorf("unknown cache type: %v", t)
 	}

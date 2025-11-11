@@ -9,6 +9,7 @@ require (
 	github.com/coocood/freecache v1.2.4
 	github.com/dgraph-io/ristretto v0.2.0
 	github.com/jellydator/ttlcache/v3 v3.4.0
+	github.com/mdaliyan/icache v1.1.7
 	github.com/yuseferi/gocache v1.0.1
 )
 
