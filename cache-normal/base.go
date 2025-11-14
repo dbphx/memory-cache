@@ -13,6 +13,7 @@ const (
 	FastCache CacheType = "fastcache"
 	GoCache   CacheType = "gocache"
 	ICache    CacheType = "icache"
+	Go2Cache  CacheType = "go2cache"
 )
 
 type Cache interface {

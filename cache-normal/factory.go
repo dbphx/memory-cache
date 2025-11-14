@@ -23,6 +23,8 @@ func NewCache(t CacheType) (Cache, error) {
 		return NewGoCache()
 	case ICache:
 		return NewICachePot(time.Minute)
+	case Go2Cache:
+		return NewCache2Go()
 	default:
 		return nil, fmt.Errorf("unknown cache type: %v", t)
 	}
