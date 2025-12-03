@@ -34,7 +34,7 @@ func (c *cache2goAdapter) Get(key string) ([]byte, bool) {
 }
 
 func (c *cache2goAdapter) Delete(key string) error {
-	c.cache.Delete(key)
+	_, _ = c.cache.Delete(key)
 	return nil
 }
 

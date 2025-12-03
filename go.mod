@@ -8,6 +8,7 @@ require (
 	github.com/allegro/bigcache/v3 v3.1.0
 	github.com/coocood/freecache v1.2.4
 	github.com/dgraph-io/ristretto v0.2.0
+	github.com/erni27/imcache v1.2.1
 	github.com/jellydator/ttlcache/v3 v3.4.0
 	github.com/mdaliyan/icache v1.1.7
 	github.com/muesli/cache2go v0.0.0-20221011235721-518229cd8021

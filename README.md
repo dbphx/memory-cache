@@ -48,6 +48,8 @@ pkg: github.com/memcache/benchmark
 |               | Get       | 132.6 | 40   | 2         |
 | **Go2Cache**  | Set       | 188.6 | 208  | 5         |
 |               | Get       | 102.7 | 16   | 1         |
+| **ImCache**   | Set       | 105.0 | 16   | 1         |
+|               | Get       | 93.08 | 0    | 0         |
 raw benchmark:
 
 ```
@@ -69,6 +71,8 @@ BenchmarkAllCaches/Icache_Set-8                  5346549               223.8 ns/
 BenchmarkAllCaches/Icache_Get-8                  9755575               132.6 ns/op            40 B/op          2 allocs/op
 BenchmarkAllCaches/Go2Cache_Set-8                6685914               188.6 ns/op           208 B/op          5 allocs/op
 BenchmarkAllCaches/Go2Cache_Get-8               11563836               102.7 ns/op            16 B/op          1 allocs/op
+BenchmarkAllCaches/Imcache_Set-8                11237883               105.0 ns/op            16 B/op          1 allocs/op
+BenchmarkAllCaches/Imcache_Get-8                12986338                93.08 ns/op            0 B/op          0 allocs/op
 ```
 
 ## 🧰 How to Run
