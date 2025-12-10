@@ -10,6 +10,7 @@ require (
 	github.com/dgraph-io/ristretto v0.2.0
 	github.com/erni27/imcache v1.2.1
 	github.com/jellydator/ttlcache/v3 v3.4.0
+	github.com/maypok86/otter/v2 v2.2.1
 	github.com/mdaliyan/icache v1.1.7
 	github.com/muesli/cache2go v0.0.0-20221011235721-518229cd8021
 	github.com/yuseferi/gocache v1.0.1
@@ -18,9 +19,12 @@ require (
 require (
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/dolthub/maphash v0.1.0 // indirect
 	github.com/dustin/go-humanize v1.0.1 // indirect
+	github.com/gammazero/deque v1.2.0 // indirect
 	github.com/golang/snappy v1.0.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
+	github.com/maypok86/otter v1.2.4 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect

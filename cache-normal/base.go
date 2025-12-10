@@ -15,6 +15,7 @@ const (
 	ICache    CacheType = "icache"
 	Go2Cache  CacheType = "go2cache"
 	Imcache   CacheType = "imcache"
+	Otter     CacheType = "ottercache"
 )
 
 type Cache interface {
