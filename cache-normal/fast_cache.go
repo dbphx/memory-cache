@@ -1,6 +1,7 @@
 package memory
 
 import (
+	"encoding/json"
 	"errors"
 	"time"
 
@@ -21,16 +22,32 @@ func (f *FastCacheWrapper) Set(key string, value []byte, ttl time.Duration) erro
 	if key == "" {
 		return errors.New("key cannot be empty")
 	}
-	f.cache.Set([]byte(key), value)
+	entry := bytesCacheEntry{Value: value}
+	if ttl > 0 {
+		entry.ExpiresAt = time.Now().Add(ttl)
+	}
+	data, err := json.Marshal(entry)
+	if err != nil {
+		return err
+	}
+	f.cache.Set([]byte(key), data)
 	return nil
 }
 
 func (f *FastCacheWrapper) Get(key string) ([]byte, bool) {
-	val := f.cache.Get(nil, []byte(key))
-	if val == nil {
+	data := f.cache.Get(nil, []byte(key))
+	if data == nil {
 		return nil, false
 	}
-	return val, true
+	var entry bytesCacheEntry
+	if err := json.Unmarshal(data, &entry); err != nil {
+		return nil, false
+	}
+	if !entry.ExpiresAt.IsZero() && time.Now().After(entry.ExpiresAt) {
+		f.cache.Del([]byte(key))
+		return nil, false
+	}
+	return entry.Value, true
 }
 
 func (f *FastCacheWrapper) Delete(key string) error {

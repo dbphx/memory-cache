@@ -24,8 +24,10 @@ func NewRistretto() (*RistrettoCache, error) {
 
 func (r *RistrettoCache) Set(key string, value []byte, ttl time.Duration) error {
 	cost := int64(len(value))
-	r.cache.SetWithTTL(key, value, cost, ttl)
-	// ristretto set async → return nil immediately
+	if ok := r.cache.SetWithTTL(key, value, cost, ttl); !ok {
+		return nil
+	}
+	r.cache.Wait()
 	return nil
 }
 

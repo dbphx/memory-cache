@@ -12,7 +12,8 @@ type OtterV2Cache struct {
 
 func NewOtterV2Cache(maxEntries int) *OtterV2Cache {
 	c := otter.Must(&otter.Options[string, []byte]{
-		MaximumSize: maxEntries,
+		MaximumSize:      maxEntries,
+		ExpiryCalculator: otter.ExpiryWriting[string, []byte](time.Minute),
 	})
 	return &OtterV2Cache{back: c}
 }

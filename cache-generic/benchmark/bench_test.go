@@ -63,6 +63,9 @@ func BenchmarkAllCaches(b *testing.B) {
 			for _, k := range keys {
 				_ = c.Set(k, value, testTTL)
 			}
+			if _, ok := c.Get(keys[0]); !ok {
+				b.Fatalf("cache preload failed for %s", tt.name)
+			}
 
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {

@@ -7,7 +7,8 @@ import (
 )
 
 type TheineCache struct {
-	cache *theine.Cache[string, []byte]
+	cache    *theine.Cache[string, []byte]
+	capacity int
 }
 
 func NewTheineCache(capacity int) (*TheineCache, error) {
@@ -16,7 +17,7 @@ func NewTheineCache(capacity int) (*TheineCache, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &TheineCache{cache: cache}, nil
+	return &TheineCache{cache: cache, capacity: capacity}, nil
 }
 
 func (t *TheineCache) Set(key string, value []byte, ttl time.Duration) error {
@@ -36,6 +37,12 @@ func (t *TheineCache) Delete(key string) error {
 
 func (t *TheineCache) Clear() error {
 	t.cache.Close()
+	builder := theine.NewBuilder[string, []byte](int64(t.capacity))
+	cache, err := builder.Build()
+	if err != nil {
+		return err
+	}
+	t.cache = cache
 	return nil
 }
 

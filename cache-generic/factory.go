@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func NewCache[K comparable, V any](t CacheType) (Cache[K, V], error) {
+func NewCache[K ~string, V any](t CacheType) (Cache[K, V], error) {
 	switch t {
 	case BigCache:
 		return NewBigCache[K, V]()
