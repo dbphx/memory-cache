@@ -34,6 +34,8 @@ func BenchmarkAllCaches(b *testing.B) {
 		{"Ristretto", cachelib.Ristretto},
 		{"Theine", cachelib.Theine},
 		{"TTLCache", cachelib.TttlCache},
+		{"SyncMap", cachelib.SyncMap},
+		{"MutexMap", cachelib.MutexMap},
 	}
 
 	for _, tt := range tests {

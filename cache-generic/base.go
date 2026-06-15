@@ -10,6 +10,8 @@ const (
 	Ristretto CacheType = "ristretto"
 	Theine    CacheType = "theine"
 	TttlCache CacheType = "ttlcache"
+	SyncMap   CacheType = "syncmap"
+	MutexMap  CacheType = "mutexmap"
 )
 
 type Cache[K ~string, V any] interface {

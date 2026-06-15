@@ -16,6 +16,8 @@ const (
 	Go2Cache  CacheType = "go2cache"
 	Imcache   CacheType = "imcache"
 	Otter     CacheType = "ottercache"
+	SyncMap   CacheType = "syncmap"
+	MutexMap  CacheType = "mutexmap"
 )
 
 type Cache interface {

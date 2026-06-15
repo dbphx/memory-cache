@@ -29,6 +29,10 @@ func NewCache(t CacheType) (Cache, error) {
 		return NewImcacheAdapter(), nil
 	case Otter:
 		return NewOtterV2Cache(1_000_000), nil
+	case SyncMap:
+		return NewSyncMapCache(), nil
+	case MutexMap:
+		return NewMutexMapCache(), nil
 	default:
 		return nil, fmt.Errorf("unknown cache type: %v", t)
 	}

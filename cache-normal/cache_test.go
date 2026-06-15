@@ -20,6 +20,8 @@ func normalCacheTypes() []CacheType {
 		Go2Cache,
 		Imcache,
 		Otter,
+		SyncMap,
+		MutexMap,
 	}
 }
 

@@ -15,6 +15,8 @@ func genericCacheTypes() []CacheType {
 		Ristretto,
 		Theine,
 		TttlCache,
+		SyncMap,
+		MutexMap,
 	}
 }
 

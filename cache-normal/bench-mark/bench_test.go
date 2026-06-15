@@ -46,6 +46,8 @@ func BenchmarkAllCaches(b *testing.B) {
 		{"Go2Cache", cachenormal.Go2Cache},
 		{"Imcache", cachenormal.Imcache},
 		{"Otter", cachenormal.Otter},
+		{"SyncMap", cachenormal.SyncMap},
+		{"MutexMap", cachenormal.MutexMap},
 	}
 
 	for _, tt := range tests {

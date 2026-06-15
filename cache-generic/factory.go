@@ -16,6 +16,10 @@ func NewCache[K ~string, V any](t CacheType) (Cache[K, V], error) {
 		return NewTheineCache[K, V](1_000_000)
 	case TttlCache:
 		return NewTTLCache[K, V]()
+	case SyncMap:
+		return NewSyncMapCache[K, V](), nil
+	case MutexMap:
+		return NewMutexMapCache[K, V](), nil
 	default:
 		return nil, fmt.Errorf("unknown cache type: %v", t)
 	}
